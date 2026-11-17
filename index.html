@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nama Kamu — Portfolio</title>
+  <meta name="description" content="Portfolio pribadi Nama Kamu, seorang Web Developer.">
+
+  <!-- Font dari Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- File CSS kita -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container navbar-isi">
+      <a href="#" class="logo">nama<span>.</span></a>
+      <nav>
+        <ul class="menu">
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#keahlian">Keahlian</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO (bagian paling atas) ============ -->
+    <section class="hero">
+      <div class="container hero-isi">
+        <div class="hero-teks">
+          <p class="badge">👋 Halo, saya</p>
+          <h1>Nama Kamu</h1>
+          <h2>Web Developer & UI Enthusiast</h2>
+          <p class="hero-deskripsi">
+            Saya suka membuat website yang sederhana, rapi, dan enak dipakai.
+            Saat ini sedang belajar HTML, CSS, dan JavaScript.
+          </p>
+          <div class="hero-tombol">
+            <a href="#proyek" class="tombol tombol-utama">Lihat Proyek</a>
+            <a href="#kontak" class="tombol tombol-garis">Hubungi Saya</a>
+          </div>
+        </div>
+
+        <!-- Ganti dengan foto kamu: <img src="foto.jpg" alt="Foto Nama Kamu" class="foto"> -->
+        <div class="foto">NK</div>
+      </div>
+    </section>
+
+    <!-- ============ TENTANG ============ -->
+    <section id="tentang" class="bagian">
+      <div class="container">
+        <h2 class="judul-bagian">Tentang Saya</h2>
+        <div class="tentang-isi">
+          <p>
+            Halo! Saya <strong>Nama Kamu</strong>, seorang pelajar/mahasiswa yang
+            tertarik dengan dunia web. Saya memulai perjalanan coding dari
+            membuat halaman HTML sederhana, dan sekarang senang membangun
+            tampilan website yang menarik.
+          </p>
+          <p>
+            Di luar coding, saya suka membaca, mendengarkan musik, dan
+            mencoba hal-hal baru.
+          </p>
+
+          <!-- Angka-angka kecil -->
+          <div class="statistik">
+            <div class="stat">
+              <span class="angka">2+</span>
+              <span class="label">Tahun Belajar</span>
+            </div>
+            <div class="stat">
+              <span class="angka">10+</span>
+              <span class="label">Proyek Selesai</span>
+            </div>
+            <div class="stat">
+              <span class="angka">5</span>
+              <span class="label">Teknologi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KEAHLIAN ============ -->
+    <section id="keahlian" class="bagian bagian-abu">
+      <div class="container">
+        <h2 class="judul-bagian">Keahlian</h2>
+        <ul class="daftar-keahlian">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Git & GitHub</li>
+          <li>Figma</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PROYEK ============ -->
+    <section id="proyek" class="bagian">
+      <div class="container">
+        <h2 class="judul-bagian">Proyek Saya</h2>
+
+        <div class="grid-proyek">
+
+          <!-- Kartu proyek 1 -->
+          <article class="kartu">
+            <div class="kartu-gambar warna-1">🛒</div>
+            <div class="kartu-isi">
+              <h3>Toko Online</h3>
+              <p>Halaman toko sederhana untuk menampilkan produk dengan desain yang bersih.</p>
+              <div class="tag">
+                <span>HTML</span><span>CSS</span>
+              </div>
+              <a href="#" class="link-proyek">Lihat proyek →</a>
+            </div>
+          </article>
+
+          <!-- Kartu proyek 2 -->
+          <article class="kartu">
+            <div class="kartu-gambar warna-2">🌦️</div>
+            <div class="kartu-isi">
+              <h3>Aplikasi Cuaca</h3>
+              <p>Menampilkan informasi cuaca berdasarkan nama kota yang dicari.</p>
+              <div class="tag">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+              <a href="#" class="link-proyek">Lihat proyek →</a>
+            </div>
+          </article>
+
+          <!-- Kartu proyek 3 -->
+          <article class="kartu">
+            <div class="kartu-gambar warna-3">📝</div>
+            <div class="kartu-isi">
+              <h3>Catatan Harian</h3>
+              <p>Aplikasi to-do list untuk mencatat kegiatan sehari-hari.</p>
+              <div class="tag">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+              <a href="#" class="link-proyek">Lihat proyek →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAK ============ -->
+    <section id="kontak" class="bagian bagian-gelap">
+      <div class="container kontak-isi">
+        <h2 class="judul-bagian">Ayo Ngobrol!</h2>
+        <p>Punya ide proyek atau sekadar ingin menyapa? Kirim pesan ke saya.</p>
+        <a href="mailto:email@contoh.com" class="tombol tombol-utama">email@contoh.com</a>
+
+        <ul class="sosmed">
+          <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+          <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://instagram.com/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p>© 2026 Nama Kamu. Dibuat dengan HTML & CSS.</p>
+  </footer>
+
+</body>
+</html>

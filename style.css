@@ -1,0 +1,462 @@
+/* =========================================================
+   1. VARIABEL WARNA & UKURAN
+   Ganti nilai di sini untuk mengubah tema seluruh website.
+   ========================================================= */
+:root {
+  --warna-utama: #6c5ce7;      /* ungu — warna aksen */
+  --warna-utama-gelap: #5a4bd1;
+  --warna-teks: #1e1e2f;       /* teks utama */
+  --warna-teks-pudar: #6b6b80; /* teks sekunder */
+  --warna-latar: #ffffff;
+  --warna-abu: #f6f6fb;
+  --warna-gelap: #1e1e2f;
+
+  --radius: 16px;              /* kelengkungan sudut */
+  --lebar-maks: 1100px;        /* lebar maksimal konten */
+}
+
+
+/* =========================================================
+   2. RESET DASAR
+   Menghapus jarak bawaan browser agar tampilan konsisten.
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* scroll halus saat klik menu */
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--warna-teks);
+  background-color: var(--warna-latar);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* =========================================================
+   3. KELAS UMUM (dipakai berulang)
+   ========================================================= */
+
+/* Pembungkus agar konten berada di tengah */
+.container {
+  max-width: var(--lebar-maks);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Jarak atas-bawah setiap bagian */
+.bagian {
+  padding: 96px 0;
+}
+
+.bagian-abu {
+  background-color: var(--warna-abu);
+}
+
+.bagian-gelap {
+  background-color: var(--warna-gelap);
+  color: #ffffff;
+}
+
+/* Judul setiap bagian, dengan garis kecil di bawahnya */
+.judul-bagian {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.judul-bagian::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 4px;
+  background-color: var(--warna-utama);
+}
+
+/* Tombol */
+.tombol {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.tombol-utama {
+  background-color: var(--warna-utama);
+  color: #ffffff;
+}
+
+.tombol-utama:hover {
+  background-color: var(--warna-utama-gelap);
+  transform: translateY(-2px);
+}
+
+.tombol-garis {
+  border: 2px solid var(--warna-teks);
+}
+
+.tombol-garis:hover {
+  background-color: var(--warna-teks);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   4. NAVBAR
+   ========================================================= */
+.navbar {
+  position: sticky;      /* menempel di atas saat di-scroll */
+  top: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #eeeeee;
+}
+
+.navbar-isi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--warna-utama);
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+}
+
+.menu a {
+  font-weight: 500;
+  color: var(--warna-teks-pudar);
+  transition: 0.2s;
+}
+
+.menu a:hover {
+  color: var(--warna-utama);
+}
+
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+.hero {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f3f0ff 0%, #ffffff 60%);
+}
+
+.hero-isi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background-color: #e9e5ff;
+  color: var(--warna-utama);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--warna-utama);
+  margin: 8px 0 20px;
+}
+
+.hero-deskripsi {
+  max-width: 480px;
+  color: var(--warna-teks-pudar);
+  margin-bottom: 32px;
+}
+
+.hero-tombol {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Foto profil (bulat). Bisa diganti dengan <img class="foto"> */
+.foto {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--warna-utama), #a29bfe);
+  color: #ffffff;
+  font-size: 5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(108, 92, 231, 0.35);
+}
+
+
+/* =========================================================
+   6. TENTANG
+   ========================================================= */
+.tentang-isi {
+  max-width: 720px;
+}
+
+.tentang-isi p {
+  margin-bottom: 16px;
+  color: var(--warna-teks-pudar);
+}
+
+.statistik {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  min-width: 140px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background-color: var(--warna-abu);
+  text-align: center;
+}
+
+.angka {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--warna-utama);
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--warna-teks-pudar);
+}
+
+
+/* =========================================================
+   7. KEAHLIAN
+   ========================================================= */
+.daftar-keahlian {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.daftar-keahlian li {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  border: 1px solid #e4e4ef;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.daftar-keahlian li:hover {
+  border-color: var(--warna-utama);
+  color: var(--warna-utama);
+}
+
+
+/* =========================================================
+   8. PROYEK
+   ========================================================= */
+.grid-proyek {
+  display: grid;
+  /* otomatis jadi 1, 2, atau 3 kolom tergantung lebar layar */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.kartu {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  transition: 0.3s;
+}
+
+.kartu:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Area gambar proyek. Bisa diganti dengan <img> screenshot proyek */
+.kartu-gambar {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.warna-1 { background: linear-gradient(135deg, #ffeaa7, #fab1a0); }
+.warna-2 { background: linear-gradient(135deg, #81ecec, #74b9ff); }
+.warna-3 { background: linear-gradient(135deg, #a29bfe, #fd79a8); }
+
+.kartu-isi {
+  padding: 24px;
+}
+
+.kartu-isi h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.kartu-isi p {
+  color: var(--warna-teks-pudar);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.tag {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag span {
+  padding: 4px 12px;
+  border-radius: 6px;
+  background-color: var(--warna-abu);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.link-proyek {
+  font-weight: 700;
+  color: var(--warna-utama);
+}
+
+
+/* =========================================================
+   9. KONTAK & FOOTER
+   ========================================================= */
+.kontak-isi {
+  text-align: center;
+}
+
+.kontak-isi .judul-bagian::after {
+  margin: 8px auto 0; /* garis di tengah */
+}
+
+.kontak-isi p {
+  color: #b8b8cc;
+  margin-bottom: 32px;
+}
+
+.sosmed {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.sosmed a {
+  color: #b8b8cc;
+  transition: 0.2s;
+}
+
+.sosmed a:hover {
+  color: #ffffff;
+}
+
+.footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #b8b8cc;
+  background-color: #16161f;
+}
+
+
+/* =========================================================
+   10. RESPONSIVE (tampilan HP / layar kecil)
+   Aturan di dalam sini hanya berlaku jika lebar layar ≤ 768px.
+   ========================================================= */
+@media (max-width: 768px) {
+  .menu {
+    gap: 16px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 64px 0;
+  }
+
+  /* foto pindah ke atas, teks ke bawah */
+  .hero-isi {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-deskripsi {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-tombol {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .foto {
+    width: 180px;
+    height: 180px;
+    font-size: 3rem;
+  }
+
+  .bagian {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    display: none; /* sembunyikan logo agar menu muat */
+  }
+
+  .navbar-isi {
+    justify-content: center;
+  }
+}
